@@ -220,7 +220,7 @@
             <h1>Una pregunta especial...</h1>
             <p class="message">
                 En este 14 de febrero, quiero preguntarte algo que me hace muy feliz solo de pensarlo...
-                Ale mi amor, mi todo, mi vida, mi cielo...
+                <span id='userName'><span>mi amor, mi todo, mi vida, mi cielo...
                 <br><br>
                 <strong>¿Quieres ser mi San valentin bb? ❤️</strong>
             </p>
@@ -240,6 +240,20 @@
     </div>
 
     <script>
+
+        // Obtener el nombre de la URL
+        function getNameFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('nombre');
+            
+            if (name) {
+                document.getElementById('userName').textContent = name;
+            }
+        }
+
+        // Ejecutar al cargar la página
+        getNameFromURL();
+        
         // Crear corazones flotantes de fondo
         function createFloatingHearts() {
             const background = document.getElementById('heartBackground');
